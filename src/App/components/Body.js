@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Table, Container, Divider, Grid, Header, Image } from 'semantic-ui-react'
+import { Table, Container, Divider, Grid, Header, Image, Segment, Button, Icon } from 'semantic-ui-react'
 import LeftColumnBody from './LeftColumnBody.js'
 import RightColumnBody from './RightColumnBody.js'
 
@@ -18,9 +18,7 @@ class Body extends Component {
 
   render() {
   return (
-    <div className="react">
-      
-      
+    <main className="react">
       
     <Container>
       <Grid columns='equal'>
@@ -38,7 +36,7 @@ class Body extends Component {
 
       
     
-    </div>
+    </main>
     );
   }
 }

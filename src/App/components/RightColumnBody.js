@@ -12,14 +12,14 @@ class LeftColumnBody extends Component {
 
   render() {
   return (
-    <div className="react">
+    <section className="react">
            <br></br>
                 <h2 style={{paddingLeft : '100px'}}> &#9889; Replenish yourself  </h2>
                 <br></br>
                 <h2 style={{paddingLeft : '100px'}}>  &#9764; Stay strong </h2>
                 <br></br>
                 <h2 style={{paddingLeft : '100px'}}>  &#9753; Be natural</h2>
-    </div>
+    </section>
     );
   }
 }

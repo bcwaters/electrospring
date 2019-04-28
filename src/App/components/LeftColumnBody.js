@@ -13,17 +13,10 @@ class LeftColumnBody extends Component {
 
   render() {
   return (
-    <div className="react">
+    <section className="react">
                 <Table basic style={{border:'none'}}>
       
-                    <Table.Header> 
-                        <Table.Row>     
-                            <Table.HeaderCell>
-                                <h1 style={{textAlign:'center'}}>&#9832; ElectroSpring &#9832;</h1>
-                            </Table.HeaderCell>
-                        </Table.Row>
-                    </Table.Header>
-      
+                  
                     <Table.Body> 
                         <Table.Row>     
                             <Table.Cell>
@@ -35,7 +28,7 @@ class LeftColumnBody extends Component {
                     </Table.Body>
         
                 </Table>
-    </div>
+    </section>
     );
   }
 }
