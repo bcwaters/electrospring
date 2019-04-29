@@ -1,17 +1,16 @@
 
 import React, { Component } from 'react';
-import { Menu, Segment, Visibility } from 'semantic-ui-react'
+import { withRouter } from "react-router-dom";
+import { Menu, Segment, Visibility, Link } from 'semantic-ui-react'
 import AppColors from './styles/AppColors.js'
 
 class TopNavBar extends Component {
-
-     state = {}
 
     state = {}
 
     hideFixedMenu = () => this.setState({ 
         fixed: false, 
-        menuStyle:{background:'transparent'}
+        menuStyle:{background:AppColors.secondary}
     })
 
     showFixedMenu = () => this.setState({
@@ -19,7 +18,15 @@ class TopNavBar extends Component {
         menuStyle:{background:AppColors.secondaryDark}  
     })
 
-    handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
+    handleItemClick = (e, { name, to }) => {
+        console.log('clcik' + 'name' + 'to: ' + to)
+        this.setState({ activeItem: name })
+        if(to !=null){
+            this.props.history.push({pathname: to});    
+        }
+                             
+    }
 
     render() {
         const { activeItem } = this.state
@@ -40,10 +47,11 @@ class TopNavBar extends Component {
               pointing={!fixed}
               secondary={true}
               size='large'>
-          <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
+          <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick}   to='/' />
           <Menu.Item
-            name='products'
-            active={activeItem === 'products'}
+            name='shop'
+            to='/shop'
+            active={activeItem === 'shop'}
             onClick={this.handleItemClick}
           />
           <Menu.Item
@@ -67,4 +75,4 @@ class TopNavBar extends Component {
 }
     
     
-export default TopNavBar;
+export default withRouter(TopNavBar);

@@ -1,10 +1,6 @@
 
 import React, { Component } from 'react';
 import { Table, Container, Divider, Grid, Header, Image, Segment, Button, Icon } from 'semantic-ui-react'
-import LeftColumnBody from './LeftColumnBody.js'
-import RightColumnBody from './RightColumnBody.js'
-
-
 
 
 class Banner extends Component {

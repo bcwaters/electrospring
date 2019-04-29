@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Segment } from 'semantic-ui-react'
-import TopNavBar from './TopNavBar.js'
+import TopNavBar from '../TopNavBar.js'
 import Banner from './Banner.js'
-import {styles} from './styles/styles.js'
-import AppColors from './styles/AppColors.js'
+import {styles} from '../styles/styles.js'
+
 
 class PageHeader extends Component {
 
@@ -16,11 +16,18 @@ class PageHeader extends Component {
 
   render() {
   return (
-    <div style={styles.AngleDivider}>
+    <header className="react">
       
-      
+        <Segment
+            inverted
+            textAlign='center'
+            style={styles.PageHeader}
+            vertical
+        >
+            <Banner/>
+        </Segment>
     
-    </div>
+    </header>
     );
   }
 }

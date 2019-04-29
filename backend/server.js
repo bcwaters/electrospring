@@ -8,11 +8,16 @@ const router = express.Router()
 
     //set up dist as static folder
     //dist is the directory created by webpack build
-    router.use('/', express.static(path.join(__dirname, '../dist')));
+    router.use( express.static(path.join(__dirname, '../dist')));
+
 
     //Route setup
+
     router.get('/', (req, res) => {
         res.sendFile(path.join(__dirname,'index.html'));
+    })
+    router.get('*', (req, res) => {
+        res.redirect('/');
     })
 
 //set up express server

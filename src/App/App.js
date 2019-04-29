@@ -1,8 +1,9 @@
 import React, { Component} from "react";
 import { Segment } from 'semantic-ui-react'
-import PageHeader from './components/PageHeader.js'
-import AngleDivider from './components/AngleDivider.js'
-import Body from './components/Body.js'
+import TopNavBar from './components/TopNavBar.js'
+import HomeView from './components/HomeView/HomeView.js'
+import ShopView from './components/ShopView/ShopView.js'
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 //Primary colors for design https://paletton.com/#uid=52Q0u0kllllaFw0g0qFqFg0w0aF
 
@@ -10,16 +11,15 @@ import Body from './components/Body.js'
 class App extends Component{
   render(){
     return(
+    <Router>
       <div className="App">
-        <PageHeader/>
-        
-        <Body/>
-        <AngleDivider/>
-         <Body/>
-        <AngleDivider/>
-         <Body/>
-         <Body/>
+        <TopNavBar/>
+        <Switch>
+            <Route exact path='/' component={HomeView}/>
+            <Route path='/shop' component={ShopView}/>
+        </Switch>
       </div>
+    </Router>
     );
   }
 }

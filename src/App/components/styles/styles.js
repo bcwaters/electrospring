@@ -17,7 +17,6 @@ var linearGradientStringDivider = 'linear-gradient(5deg,'
     +AppColors.secondaryDark+ ', '
     +AppColors.secondaryDark+ 
     ' 35%, '+AppColors.primary+' 36%,'+AppColors.primary+')';
-console.log(linearGradientStringDivider)
 var _AngleDivider = {
     background: linearGradientStringDivider,
     minHeight: '200px',
