@@ -6,7 +6,7 @@ import AppColors from './styles/AppColors.js'
 
 class TopNavBar extends Component {
 
-    state = {}
+    state = { menuStyle:{background:AppColors.secondary}}
 
     hideFixedMenu = () => this.setState({ 
         fixed: false, 
