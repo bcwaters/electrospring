@@ -56,6 +56,7 @@ class TopNavBar extends Component {
           />
           <Menu.Item
             name='results'
+            to='/product/id_443'
             active={activeItem === 'results'}
             onClick={this.handleItemClick}
           />

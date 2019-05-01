@@ -14,10 +14,10 @@ const router = express.Router()
     //Route setup
 
     router.get('/', (req, res) => {
-        res.sendFile(path.join(__dirname,'index.html'));
+        res.sendFile('index.html', {root: __dirname});
     })
     router.get('*', (req, res) => {
-        res.redirect('/');
+         res.sendFile('index.html', {root: path.resolve(__dirname, '../dist')});
     })
 
 //set up express server
