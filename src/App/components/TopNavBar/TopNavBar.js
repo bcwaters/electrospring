@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import {withRouter} from "react-router-dom";
-import {Menu, Segment, Visibility, Link} from 'semantic-ui-react'
-import {ThemeProvider} from './styles/styles.js'
+import {Menu, Visibility,} from 'semantic-ui-react'
+import {ThemeProvider} from '../styles/ThemeProvider.js'
+import ThemeDropDown from './ThemeDropDown.js'
+import MenuButton from './MenuButton.js'
 
 const AppColors = ThemeProvider.getThemeColor('MainTheme')
 
@@ -10,7 +12,25 @@ class TopNavBar extends Component {
     state = {
         menuStyle: {background: AppColors.secondary},
         themeColors: ThemeProvider.getThemeColor('MainTheme'),
-        themeName: 'MainTheme'
+        themeName: 'MainTheme',
+        ThemeOptions: [
+            {
+                key: 'MainTheme',
+                text: 'MainTheme',
+                value: 'MainTheme',
+            },
+            {
+                key: 'TestTheme',
+                text: 'TestTheme',
+                value: 'TestTheme',
+
+            },
+            {
+                key: 'SpaceTheme',
+                text: 'SpaceTheme',
+                value: 'SpaceTheme',
+            }
+        ]
     }
 
     hideFixedMenu = () => this.setState({
@@ -23,6 +43,33 @@ class TopNavBar extends Component {
         menuStyle: {background: this.state.themeColors.secondaryDark}
     })
 
+    addTheme = () => {
+
+        let randomName = 'theme' + (Math.random() * 0xFFF << 0).toString(16)
+        ThemeProvider.addColorTheme({
+            primary: '#' + (Math.random() * 0xFFFFFF << 0).toString(16),
+            primaryLight: '#' + (Math.random() * 0xFFFFFF << 0).toString(16),
+            primaryDark: '#' + (Math.random() * 0xFFFFFF << 0).toString(16),
+            secondary: '#' + (Math.random() * 0xFFFFFF << 0).toString(16),
+            secondaryLight: '#' + (Math.random() * 0xFFFFFF << 0).toString(16),
+            secondaryDark: '#' + (Math.random() * 0xFFFFFF << 0).toString(16),
+            accent: '#' + (Math.random() * 0xFFFFFF << 0).toString(16),
+            accentLight: '#' + (Math.random() * 0xFFFFFF << 0).toString(16),
+            accentDark: '#' + (Math.random() * 0xFFFFFF << 0).toString(16)
+        }, randomName)
+        this.setState((prevState) => {
+            return {
+                ThemeOptions: [...prevState.ThemeOptions,
+                    {
+                        key: randomName,
+                        text: randomName,
+                        value: randomName
+                    }]
+            }
+        })
+        this.handleToggleTheme(randomName)
+    }
+
 
     handleItemClick = (e, {name, to}) => {
         console.log('clcik' + 'name' + 'to: ' + to)
@@ -32,9 +79,9 @@ class TopNavBar extends Component {
         }
     }
 
-    handleResultClicked = (e, {name, to}) => {
-        let themeName = this.state.themeName == "TestTheme" ? "MainTheme" : "TestTheme"
+    handleToggleTheme = (themeName) => {
         this.props.setTheme(themeName)
+        ThemeProvider.currentColorTheme = themeName
         console.log("result clicked")
         let fixedState = this.state.fixed ? "secondaryDark" : "secondary"
         this.setState((prevState, props) => {
@@ -42,7 +89,6 @@ class TopNavBar extends Component {
                     themeColors: ThemeProvider.getThemeColor(themeName),
                     themeName: themeName,
                     menuStyle: {background: ThemeProvider.getThemeColor(themeName)[fixedState]}
-
                 }
             }
         )
@@ -78,11 +124,13 @@ class TopNavBar extends Component {
                             onClick={this.handleItemClick}
                         />
                         <Menu.Item
-                            name="ToggleTheme"
-                            to='/product/id_443'
-                            active={activeItem === 'theme'}
-                            onClick={this.handleResultClicked}
+                            children={< ThemeDropDown ThemeOptions={this.state.ThemeOptions}
+                                                      handleToggle={this.handleToggleTheme}/>}
                         />
+                        <Menu.Item
+                            children={<MenuButton onClick={this.addTheme} themeName={this.state.themeName}/>}
+                        />
+
                         <Menu.Menu position='right'>
                             <Menu.Item
                                 name='logout'
@@ -90,6 +138,8 @@ class TopNavBar extends Component {
                                 onClick={this.handleItemClick}
                             />
                         </Menu.Menu>
+
+
                     </Menu>
 
                 </Visibility>

@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App/App.js";
-import {ThemeProvider} from './App/components/styles/styles.js'
+import {ThemeProvider} from './App/components/styles/ThemeProvider.js'
 
 
 const style = document.createElement('style')

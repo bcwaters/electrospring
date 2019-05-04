@@ -9,6 +9,7 @@ class ProductGrid extends Component {
 
     componentDidMount() {
     }
+
     handleItemClick = (e) => {
         this.props.history.push({pathname: e.currentTarget.attributes.to.nodeValue});
     }

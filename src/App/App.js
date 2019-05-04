@@ -1,10 +1,10 @@
 import React, {Component} from "react";
-import TopNavBar from './components/TopNavBar.js'
+import TopNavBar from './components/TopNavBar/TopNavBar.js'
 import HomeView from './components/HomeView/HomeView.js'
 import ShopView from './components/ShopView/ShopView.js'
 import ProductView from './components/ProductView/ProductView.js'
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import {ThemeProvider} from './components/styles/styles.js'
+import {ThemeProvider} from './components/styles/ThemeProvider.js'
 
 //Primary colors for design https://paletton.com/#uid=52Q0u0kllllaFw0g0qFqFg0w0aF
 
@@ -16,6 +16,7 @@ class App extends Component {
     }
 
     setTheme = (themeName) => {
+
         this.setState({
             styles: ThemeProvider.getCss(themeName),
             AppColor: ThemeProvider.getThemeColor(themeName)

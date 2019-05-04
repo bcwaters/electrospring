@@ -15,7 +15,7 @@ module.exports = {
 
     TestTheme: {
         primary: '#7109AA',
-        primaryLight: '#54A759',
+        primaryLight: '#7109FF',
         primaryDark: '#822EAF',
         secondary: '#E40045',
         secondaryLight: '#E63369',
@@ -23,5 +23,25 @@ module.exports = {
         accent: '#1B1BB3',
         accentLight: '#3E3EB7',
         accentDark: '#13138A'
+    },
+    SpaceTheme: {
+        accent:
+            "#db1959",
+        accentDark:
+            "#c4e687",
+        accentLight:
+            "#eb494b",
+        primary:
+            "#6d4e4b",
+        primaryDark:
+            "#2195a5",
+        primaryLight:
+            "#ddaadd",
+        secondary:
+            "#864766",
+        secondaryDark:
+            "#12d8b4",
+        secondaryLight:
+            "#ac1a6f"
     }
 }
