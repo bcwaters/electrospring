@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 class LeftColumnBody extends Component {
 
@@ -9,18 +9,18 @@ class LeftColumnBody extends Component {
         };
     }
 
-  render() {
-  return (
-    <section className="react">
-           <br></br>
-                <h2 style={{paddingLeft : '100px'}}> &#9889; Replenish yourself  </h2>
+    render() {
+        return (
+            <section className="react">
                 <br></br>
-                <h2 style={{paddingLeft : '100px'}}>  &#9764; Stay strong </h2>
+                <h2 style={{paddingLeft: '100px'}}> &#9889; Replenish yourself </h2>
                 <br></br>
-                <h2 style={{paddingLeft : '100px'}}>  &#9753; Be natural</h2>
-    </section>
-    );
-  }
+                <h2 style={{paddingLeft: '100px'}}>  &#9764; Stay strong </h2>
+                <br></br>
+                <h2 style={{paddingLeft: '100px'}}>  &#9753; Be natural</h2>
+            </section>
+        );
+    }
 }
-    
+
 export default LeftColumnBody;

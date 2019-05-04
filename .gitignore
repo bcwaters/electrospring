@@ -1,26 +1,10 @@
-Skip to content
- 
-Search or jump to…
 
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@bcwaters 
-0
-0 0 bcwaters/yakmos
- Code  Issues 3  Pull requests 0  Projects 0  Wiki  Insights  Settings
-yakmos/.gitignore
-@bcwaters bcwaters initial commit
-a46a8ad on Mar 7
-87 lines (61 sloc)  1.19 KB
-    
 #bracket config
 .brackets.json
 
 #project specific directories
 dist/*
+.idea
 
 
 # Logs
@@ -101,17 +85,3 @@ typings/
 # FuseBox cache
 .fusebox/
 
-# DynamoDB Local files
-.dynamodb/
-© 2019 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Segment } from 'semantic-ui-react'
+import React, {Component} from 'react';
+import {Segment} from 'semantic-ui-react'
 import {styles} from '../styles/styles.js'
 
 
@@ -12,16 +12,15 @@ class PageHeader extends Component {
         };
     }
 
-  render() {
-  return (
-    <div style={styles.AngleDivider}>
-      
-      
-    
-    </div>
-    );
-  }
+    render() {
+        return (
+            <div style={styles.AngleDivider}>
+
+
+            </div>
+        );
+    }
 }
-    
-    
+
+
 export default PageHeader;
