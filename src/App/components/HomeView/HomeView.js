@@ -9,17 +9,18 @@ class HomeView extends Component {
         super();
         this.state = {
             name: 'React'
+
         };
     }
 
     render() {
         return (
             <main className="react">
-                <HomePageHeader/>
+                <HomePageHeader styles={this.props.styles}/>
                 <Body/>
-                <AngleDivider/>
+                <AngleDivider styles={this.props.styles}/>
                 <Body/>
-                <AngleDivider/>
+                <AngleDivider styles={this.props.styles}/>
                 <Body/>
                 <Body/>
             </main>

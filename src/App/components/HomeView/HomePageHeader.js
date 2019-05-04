@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
 import {Segment} from 'semantic-ui-react'
-import TopNavBar from '../TopNavBar.js'
 import Banner from './Banner.js'
-import {styles} from '../styles/styles.js'
-
 
 class PageHeader extends Component {
 
@@ -21,7 +18,7 @@ class PageHeader extends Component {
                 <Segment
                     inverted
                     textAlign='center'
-                    style={styles.PageHeader}
+                    style={this.props.styles.PageHeader}
                     vertical
                 >
                     <Banner/>

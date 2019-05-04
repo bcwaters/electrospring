@@ -1,20 +1,26 @@
 import React, {Component} from 'react';
 import {withRouter} from "react-router-dom";
 import {Menu, Segment, Visibility, Link} from 'semantic-ui-react'
-import AppColors from './styles/AppColors.js'
+import {ThemeProvider} from './styles/styles.js'
+
+const AppColors = ThemeProvider.getThemeColor('MainTheme')
 
 class TopNavBar extends Component {
 
-    state = {menuStyle: {background: AppColors.secondary}}
+    state = {
+        menuStyle: {background: AppColors.secondary},
+        themeColors: ThemeProvider.getThemeColor('MainTheme'),
+        themeName: 'MainTheme'
+    }
 
     hideFixedMenu = () => this.setState({
         fixed: false,
-        menuStyle: {background: AppColors.secondary}
+        menuStyle: {background: this.state.themeColors.secondary}
     })
 
     showFixedMenu = () => this.setState({
         fixed: true,
-        menuStyle: {background: AppColors.secondaryDark}
+        menuStyle: {background: this.state.themeColors.secondaryDark}
     })
 
 
@@ -24,12 +30,30 @@ class TopNavBar extends Component {
         if (to != null) {
             this.props.history.push({pathname: to});
         }
+    }
+
+    handleResultClicked = (e, {name, to}) => {
+        let themeName = this.state.themeName == "TestTheme" ? "MainTheme" : "TestTheme"
+        this.props.setTheme(themeName)
+        console.log("result clicked")
+        let fixedState = this.state.fixed ? "secondaryDark" : "secondary"
+        this.setState((prevState, props) => {
+                return {
+                    themeColors: ThemeProvider.getThemeColor(themeName),
+                    themeName: themeName,
+                    menuStyle: {background: ThemeProvider.getThemeColor(themeName)[fixedState]}
+
+                }
+            }
+        )
+
+        //
+        this.forceUpdate();
 
     }
 
     render() {
         const {activeItem} = this.state
-        const {children} = this.props
         const {fixed} = this.state
 
         return (
@@ -54,10 +78,10 @@ class TopNavBar extends Component {
                             onClick={this.handleItemClick}
                         />
                         <Menu.Item
-                            name='results'
+                            name="ToggleTheme"
                             to='/product/id_443'
-                            active={activeItem === 'results'}
-                            onClick={this.handleItemClick}
+                            active={activeItem === 'theme'}
+                            onClick={this.handleResultClicked}
                         />
                         <Menu.Menu position='right'>
                             <Menu.Item

@@ -9,7 +9,6 @@ class ProductGrid extends Component {
 
     componentDidMount() {
     }
-
     handleItemClick = (e) => {
         this.props.history.push({pathname: e.currentTarget.attributes.to.nodeValue});
     }
@@ -38,12 +37,9 @@ class ProductGrid extends Component {
                                 </Item.Content>
                             </Item>
                         </Grid.Column>
-
                     ))}
-
                 </Grid.Row>
             </Grid>
-
         );
     }
 }
