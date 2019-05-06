@@ -10,7 +10,8 @@ module.exports = {
         secondaryDark: '#0E4B4D',
         accent: '#7A9F35',
         accentLight: '#A4C663',
-        accentDark: '#557714'
+        accentDark: '#557714',
+        backgroundColor: '#ffffe0'
     },
 
     TestTheme: {
@@ -22,26 +23,19 @@ module.exports = {
         secondaryDark: '#8A002A',
         accent: '#1B1BB3',
         accentLight: '#3E3EB7',
-        accentDark: '#13138A'
+        accentDark: '#13138A',
+        backgroundColor: '#ffffe0'
     },
     SpaceTheme: {
-        accent:
-            "#db1959",
-        accentDark:
-            "#c4e687",
-        accentLight:
-            "#eb494b",
-        primary:
-            "#6d4e4b",
-        primaryDark:
-            "#2195a5",
-        primaryLight:
-            "#ddaadd",
-        secondary:
-            "#864766",
-        secondaryDark:
-            "#12d8b4",
-        secondaryLight:
-            "#ac1a6f"
+        accent: "#db1959",
+        accentDark: "#c4e687",
+        accentLight: "#eb494b",
+        primary: "#6d4e4b",
+        primaryDark: "#2195a5",
+        primaryLight: "#ddaadd",
+        secondary: "#864766",
+        secondaryDark: "#12d8b4",
+        secondaryLight: "#ac1a6f",
+        backgroundColor: 'grey'
     }
 }

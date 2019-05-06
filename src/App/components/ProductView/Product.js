@@ -21,7 +21,7 @@ class Product extends Component {
 
                         <Item.Image size='small' src={product.img}/>
                         <Item.Content verticalAlign='middle'>
-                            <Item.Header as='h2'>{product.title}</Item.Header>
+                            <Item.Header>{product.title}</Item.Header>
                             <Item.Meta>{product.price}</Item.Meta>
                             <Item.Description>
                                 {product.description}

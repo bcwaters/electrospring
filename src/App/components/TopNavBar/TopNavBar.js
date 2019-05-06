@@ -55,7 +55,8 @@ class TopNavBar extends Component {
             secondaryDark: '#' + (Math.random() * 0xFFFFFF << 0).toString(16),
             accent: '#' + (Math.random() * 0xFFFFFF << 0).toString(16),
             accentLight: '#' + (Math.random() * 0xFFFFFF << 0).toString(16),
-            accentDark: '#' + (Math.random() * 0xFFFFFF << 0).toString(16)
+            accentDark: '#' + (Math.random() * 0xFFFFFF << 0).toString(16),
+            backgroundColor: '#ffffe0'
         }, randomName)
         this.setState((prevState) => {
             return {

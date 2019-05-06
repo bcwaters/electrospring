@@ -22,7 +22,7 @@ class ShopView extends Component {
             <main className="react">
 
                 <ShopViewBanner/>
-                <ProductGrid/>
+                <ProductGrid styles={this.props.styles}/>
 
             </main>
         );

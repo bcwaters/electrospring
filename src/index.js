@@ -5,7 +5,7 @@ import {ThemeProvider} from './App/components/styles/ThemeProvider.js'
 
 
 const style = document.createElement('style')
-let css = 'body{background-color: ' + ThemeProvider.getDefaultColor().primary + '}'
+let css = 'body{background-color:  '+ThemeProvider.getDefaultColor().backgroundColor+'  }'
 style.innerText = css
 document.head.appendChild(style);
 

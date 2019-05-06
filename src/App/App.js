@@ -22,17 +22,17 @@ class App extends Component {
             AppColor: ThemeProvider.getThemeColor(themeName)
         })
         console.log("theme set to: " + themeName)
-        document.head.getElementsByTagName("style")[0].innerText = 'body{background-color: ' + ThemeProvider.getThemeColor(themeName).primary + '}'
+        document.head.getElementsByTagName("style")[0].innerText = 'body{background-color: ' + ThemeProvider.getThemeColor(themeName).backgroundColor + '}'
     }
 
     render() {
         return (
             <Router>
-                <div className="App" style={{backgroundColor: this.state.AppColor.primary}}>
+                <div className="App" >
                     <TopNavBar setTheme={this.setTheme}/>
                     <Switch>
                         <Route exact path='/' render={(props) => <HomeView {...props} styles={this.state.styles}/>}/>
-                        <Route path='/shop' component={ShopView}/>
+                        <Route path='/shop' render={(props) => <ShopView {...props} styles={this.state.styles}/>}/>
                         <Route path='/product/:productId' component={ProductView}/>
                     </Switch>
                 </div>
